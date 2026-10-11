@@ -10,6 +10,8 @@ services:
       DATA_DIR: /data
       SMTP_INBOUND_PORT: "0"
       APP_URL: "https://mail.qasd.dev"
+      SMTP_INBOUND_PORT: "0"
+      SMTP_URL: "${SMTP_URL}"
     expose:
       - "3000"
     volumes:
