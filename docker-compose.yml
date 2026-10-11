@@ -9,6 +9,7 @@ services:
       PORT: "3000"
       DATA_DIR: /data
       SMTP_INBOUND_PORT: "0"
+      APP_URL: "https://mail.qasd.dev"
     expose:
       - "3000"
     volumes:
