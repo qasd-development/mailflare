@@ -1,12 +1,16 @@
+
 services:
   mailflare:
     build: .
     image: mailflare:local
     restart: unless-stopped
-    ports:
-      - "3000:3000"   # web app and JMAP
-      - "25:25"       # inbound SMTP (point your domain's MX here)
-    env_file: .env.docker
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      DATA_DIR: /data
+      SMTP_INBOUND_PORT: "0"
+    expose:
+      - "3000"
     volumes:
       - mailflare-data:/data
 
