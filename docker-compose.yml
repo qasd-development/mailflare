@@ -4,16 +4,18 @@ services:
     build: .
     image: mailflare:local
     restart: unless-stopped
+
     environment:
       NODE_ENV: production
       PORT: "3000"
       DATA_DIR: /data
-      SMTP_INBOUND_PORT: "0"
       APP_URL: "https://mail.qasd.dev"
+      SMTP_INBOUND_PORT: "0"
       SMTP_URL: "${SMTP_URL}"
-      CF_TOKEN: "${CF_TOKEN}"
+
     expose:
       - "3000"
+
     volumes:
       - mailflare-data:/data
 
